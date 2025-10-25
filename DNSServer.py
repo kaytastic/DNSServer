@@ -98,8 +98,6 @@ dns_records = {
         dns.rdatatype.NS: 'ns1.nyu.edu.',
         dns.rdatatype.TXT: (string_1),
         }
-
-   
 }
 
 def run_dns_server():
@@ -149,7 +147,7 @@ def run_dns_server():
 
             # Send the response back to the client using the `server_socket.sendto` method and put the response to_wire(), return to the addr you received from
             print("Responding to request:", qname)
-            server_socket.response.to_wire(), addr 
+            server_socket.sendto(response.to_wire(), addr)
         except KeyboardInterrupt:
             print('\nExiting...')
             server_socket.close()
@@ -175,5 +173,5 @@ def run_dns_server_user():
 
 if __name__ == '__main__':
     run_dns_server_user()
-    print("Encrypted Value:", encrypted_value)
-    print("Decrypted Value:", decrypted_value)
+    #print("Encrypted Value:", encrypted_value)
+   #print("Decrypted Value:", decrypted_value)
